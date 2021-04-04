@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfMvvmSampleWithItemsControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMvvmSampleWithItemsControl" 
+        xmlns:view="clr-namespace:WpfMvvmSampleWithItemsControl.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" FontSize="20">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Add Block" Command="{Binding AddBlockCommand}" Margin="10"/>
+        <ScrollViewer Grid.Row="1">
+            <ItemsControl ItemsSource="{Binding ItemViewModels}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <view:ItemView Margin="5" Padding="5" Background="LightGray"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Window>
