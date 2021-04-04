@@ -13,7 +13,9 @@ namespace WpfMvvmSampleWithItemsControl.ViewModel
             {
                 new ItemViewModel
                 {
-
+                    TextA = ".NET",
+                    TextB = "Java",
+                    TextC = "Python",
                 }
             };
 
